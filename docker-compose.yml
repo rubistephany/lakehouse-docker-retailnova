@@ -1,0 +1,12 @@
+﻿services:
+  spark:
+    image: apache/spark:3.5.0
+    container_name: spark-delta
+    environment:
+      - SPARK_MODE=client
+    volumes:
+      - ./data:/opt/data
+      - ./spark/scripts:/opt/scripts
+      - ./input:/opt/input
+    working_dir: /opt
+    command: ["sleep", "infinity"]
